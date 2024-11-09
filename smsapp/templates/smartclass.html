@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row py-3">
+            <div class="col-sm-5 py-5">
+                <img src="{% static 'images/Class1.jpg' %}" alt="" height="300px" width="500px" style="border: 15px solid white;" class="shadow">
+            </div>
+            <div class="col-sm-7 py-4">
+                <p style="color: gray;" class="fs-5"><b>The Jaipuria Smart Class</b> makes learning fun through the use of digital equipment such as VCD or DVD players, laptops and computers attached to a projector.</p>
+                <p style="color: gray;" class="fs-5">Students are provided with audio-visual information on various topics pertaining to different subject areas from the large volume of material available online. This style of teaching engages students with the lesson and improves creativity and curiosity to facilitate better knowledge retention.</p>
+                <p style="color: gray;" class="fs-5">Mentors can use online information on different topics from latest educational material published anywhere in the world and present the information by using PowerPoint presentations, word documents, audio sessions, video screening, and other instructional tools.</p>
+            </div>
+        </div>
+        <div class="row" style="background-color: aliceblue;">
+            <div class="col-sm-12">
+                <h2 class="px-5 py-4"><u>ADVANTAGES OF SMART CLASSES</u></h2>
+                <p style="color: gray;" class="fs-5 px-4 py-2"><i class="fa-regular fa-circle-check px-3" style="color: black;"></i>Anytime access to extensive online information</p>
+                <p style="color: gray;" class="fs-5 px-4 py-2"><i class="fa-regular fa-circle-check px-3" style="color: black;"></i>Interactive environment for better knowledge retention</p>
+                <p style="color: gray;" class="fs-5 px-4 py-2"><i class="fa-regular fa-circle-check px-3" style="color: black;"></i>Education not confined to printed matter</p>
+                <p style="color: gray;" class="fs-5 px-4 py-2"><i class="fa-regular fa-circle-check px-3" style="color: black;"></i>Availability of online notes ensuring better student concentration in class</p>
+                <p style="color: gray;" class="fs-5 px-4 py-2"><i class="fa-regular fa-circle-check px-3" style="color: black;"></i>Use of electronic tools such as digital pens that are easy to maintain</p>
+                <p style="color: gray;" class="fs-5 px-4 py-2"><i class="fa-regular fa-circle-check px-3" style="color: black;"></i>Smart classes offer the perfect solution for teaching students with disparate levels of IQs. Students who need further illustration of a specific concept already taught in class for better comprehension can opt for the online resources of a smart class and retain the knowledge gained for larger periods of time.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

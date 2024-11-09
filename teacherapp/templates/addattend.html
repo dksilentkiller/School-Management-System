@@ -1,0 +1,56 @@
+{% extends 'teacherbase.html' %}
+{% load static %}
+{% block teacher %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center"><u><i> ADD Attendence</i></u></h1>
+
+        {% if msg %}
+        <div class="alert alert-danger" role="alert">{{msg}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+        {% endif%}
+        <table class="table">
+            <tr>
+                <th>S.NO</th>
+                <th>ROLL.NO</th>
+                <th>S.ID</th>
+                <th>NAME</th>
+                <th>CLASS</th>
+                <th>ATTENDANCE</th>
+                <th>DATE</th>
+                <th>ACTION</th>
+            </tr>
+            {% for s in st %}
+            <form  method="post"> 
+                {% csrf_token %}
+            <tr>
+                <td>{{forloop.counter}} </td>
+                
+                <td><input type="text" name="rollno" id="" value="{{s.rollno}} "readonly style="max-width: 100px;">  </td>
+                <td>
+                    <input type="text" name="sid" value="{{s.id}}" readonly style="max-width: 100px;"> 
+                </td>
+                <td><input type="text" name="name" value="{{s.name}}" readonly > 
+                </td>
+               <td> {{ s.sclass }} </td>
+                <td>
+                    <select name="status" class="form-select">
+                        <option value="A">Absent</option>
+                        <option value="P">present</option>
+
+                    </select> </td>
+                <td>
+                    <input type="date" name="created_date" class="form-control" required> </td>
+
+                    <td> <button type="submit" class="form-control btn btn-success">Mark</button></td>
+            </tr>
+        </form>
+            {%  endfor  %}
+
+        </table>
+    </div>
+</div>
+
+{% endblock %}

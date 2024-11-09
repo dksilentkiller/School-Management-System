@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<!-- map Stat -->
+<div class="row">
+  <div class="col-md-12">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.2041362966097!2d81.53936517522148!3d26.83345877669454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a2b20aede4817%3A0x3b01691a0b580533!2sSeth%20Anandram%20Jaipuria%20School%2C%20Ved%20Campus%2C%20Barabanki%20Mob.%209415520130!5e0!3m2!1sen!2sin!4v1725885202123!5m2!1sen!2sin"
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+<div class="row mt-5 my-5 ">
+  <h1 class="text-center">Contact Us</h1>
+  <div class="col-sm-10 mx-auto shadow my-5">
+    <div class="row">
+      {% if msg %}
+      <div class="col-sm-12">
+        <div class="alert alert-success" role="alert">{{msg}}</div>
+      </div>
+      {% endif %}
+      <div class="col-sm-6">
+        
+        <h3 class="px-5">Principle</h3>
+        <p class="px-5 py-3"><i class="fa-solid fa-envelope px-2"></i><b>Email:</b> info.barabanki@jaipuria.school</p>
+        <h4 class="px-5 py-3">Contact Info</h4>
+        <p class="px-5 py-2"><i class="fa-solid fa-location-dot px-2"></i><b>Address:</b> Barabanki - 225403</p>
+        <p class="px-5 py-3"><i class="fa-solid fa-phone px-2"></i><b>Phone:</b> 9151118324, 9151118325</p>
+        <p class="px-5"><i class="fa-solid fa-envelope px-2"></i><b>Email:</b> admission.barabanki@jaipuria.school, info.barabanki@jaipuria.school</p>
+        <h4 class="px-5 py-4">School Operational Timing</h4>
+        <p class="px-5 py-2"><i class="fa-solid fa-clock px-2"></i>Summer : 08:00 am – 02:00 pm</p>
+        <p class="px-5"><i class="fa-solid fa-clock px-2"></i>Winters : 09:00 am – 03:00 pm</p>
+      </div>
+      <div class="col-sm-6 border border-start border-2 border-primary">
+        <form class="row g-3" method="post">
+          {% csrf_token %}
+          <div class="col-md-12">
+            <br>
+            <label for="name" class="form-label">Name</label>
+            <input name="name" type="text" class="form-control" id="name">
+          </div>
+          <div class="col-md-12">
+            <label for="gender" class="form-label">Gender</label>
+            <input name="gender" type="radio" value="male" class="form-check-input">Male
+            <input name="gender" type="radio" value="female" class="form-check-input">Female
+          </div>
+          <div class="col-md-12">
+            <label for="address" class="form-label">Address</label>
+            <textarea name="address" type="text" id="address" class="form-control"></textarea>
+          </div>
+          <div class="col-md-12">
+            <label for="contactno" class="form-label">Contact no</label>
+            <input name="contactno" type="text" class="form-control" id="contactno">
+          </div>
+          <div class="col-md-12">
+            <label for="email" class="form-label">Email</label>
+            <input name="emailaddress" type="email" class="form-control" id="email">
+          </div>
+          <div class="col-md-12">
+            <label name="name" class="form-label">Enquiry text</label>
+            <textarea name="enquirytext" class="form-control" id="enquiry"></textarea>
+          </div>
+          <div class="col-12 text-center pb-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

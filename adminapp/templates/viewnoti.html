@@ -1,0 +1,35 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="row">
+    <div class="col-sm-12">
+        
+        <div class="col-sm-12">
+            <h1 class="text-center">View Notifications</h1>
+            <table class="table">
+                <tr>
+                    
+                    <th> Notification </th>
+                    <th>Document</th>
+                    <th>Added Date</th>
+                    <th>Action</th>
+                </tr>
+                {% for n in noti %}
+                <tr>
+               
+                    <td>{{n.text}}</td>
+                    <td>{{n.doc}}</td>                    
+                    <td>{{n.created_date}}</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                         <a href="#" class="btn btn-sm btn-success">Edit</a> 
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+
+
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+<div class="row ">
+    <div class="col text-center ">
+        <h1 class="text-bg-light text-center"> view Students </h1>
+        {% csrf_token %}
+        <div class="col-sm-12">
+            <div class="table-responsive">
+                <table class="table">
+
+                    <tr>
+                        <th>Roll no</th>
+                        <th>Student_name</th>
+                        <th>Father's_name</th>
+                        <th>Mother_name</th>
+                        <th>gender</th>
+                        <th>DOB</th>
+                        <th> ContactNo </th>
+                        <th> Emailaddress </th>
+                        <th> Address </th>
+                        <th> Student_class </th>
+                        <th> feepaid</th>
+                        <th> duefees</th>
+                        
+                        <th>picture </th>
+                        <th>password </th>
+                        <th>Date </th>
+                        <th>action</th>
+                    </tr>
+                    {% for s in st %}
+                    <tr>
+        
+                        
+                        <td> {{s.rollno}} </td>
+                        <td> {{s.name }} </td>
+                        <td> {{s.fname }} </td>
+                        <td> {{s.mname }} </td>
+                        <td> {{s.gender}} </td>
+                        <td> {{s.dob }} </td>
+                        <td> {{s.contactno}} </td>
+                        <td> {{s.emailaddress}} </td>
+                        <td> {{s.address }} </td>
+                        <td> {{s.sclass }} </td>
+                        <td> {{s.feepaid }} </td>
+                        <td> {{s.duefees }} </td>
+                       
+                        <td> {{s.pic}} </td>
+                        <td> {{s.password}} </td>
+                        <td> {{s.created_date}} </td>
+        
+                        <td>
+                            <a href="{% url 'adminapp:delst' id=s.rollno %}" class="btn btn-sm btn-danger">
+                                 <i class="fa-solid fa-trash"></i> delete</a>
+                            <a href="{%  url 'adminapp:editst' id=s.rollno  %}" class="btn btn-sm btn-success">
+                                <i class="fa-solid fa-pen"></i> edit</a>
+                        </td>
+                    </tr>
+        
+        
+                    {% endfor %}
+        
+                </table>
+            </div>
+        </div>
+      
+    </div>
+</div>
+
+
+{% endblock %}

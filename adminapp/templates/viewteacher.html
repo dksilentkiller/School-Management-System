@@ -1,0 +1,50 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center">View Teachers</h1>
+        <table class="table">
+            <tr> 
+                <th>Teacher Id</th>
+                <th>Teacher Name</th>
+                <th>Father's Name</th>
+                <th>Mother's Name</th>
+                <th>Gender</th>
+                <th>Date Of Birth</th>
+                <th>Contact No.</th>
+                <th>Emailaddress</th>
+                <th>Teacher Class</th>
+                <th>Address</th>
+                <th>Salary</th>
+                <th>Qualification</th>
+                <th>Added Date</th>
+                <th>Actions</th>
+            </tr>
+            {% for t in tech %}
+            <tr>
+                <td>{{t.id}}</td>
+                <td>{{t.name}}</td>
+                <td>{{t.fname}}</td>
+                <td>{{t.mname}}</td>
+                <td>{{t.gender}}</td>
+                <td>{{t.dob}}</td>
+                <td>{{t.contactno}}</td>
+                <td>{{t.emailaddress}}</td>
+                <td>{{t.tclass}}</td>
+                <td>{{t.address}}</td>
+                <td>{{t.salary}}</td>
+                <td>{{t.qualification}}</td>
+                <td>{{t.created_date}}</td>
+                <td>
+                    <a href="{% url 'adminapp:delteacher' id=t.id %}" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="{% url 'adminapp:editteacher' id=t.id %}" class="btn btn-sm btn-success">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>    
+    </div>
+</div>
+
+{% endblock %}

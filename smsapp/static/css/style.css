@@ -1,0 +1,135 @@
+
+.log-btn a{
+color: #fff;
+text-decoration: none;
+}
+
+/* navbar */
+.nav-button{
+    color: blue;
+
+}
+.nav-button:hover{
+    color: #fff;
+}
+.container-footer{
+    background-color: rgb(253, 252, 252);
+    color: #fff;
+}
+.row-foot{
+    background-color: black;
+    border-top: 7px solid rgba(153, 13, 13, 0.911);
+
+    
+    color: #fff;
+
+}
+.row-f2{
+    border-top: 7px solid rgba(116, 7, 7, 0.952);
+    background-color: black;
+    color:white ;
+}
+
+
+.justfy{
+    text-align: justify;
+}
+
+.f-style:hover{
+    background-color: blue;
+}
+.y-style:hover{
+    background-color: red;
+}
+.i-style:hover{
+    background-color: rgba(228, 27, 168, 0.651);
+ 
+}
+/* index page css  start*/
+
+.yugank:hover
+{
+box-shadow: 2px 2px 8px black;
+transition: 0.9s ease;
+}
+
+ 
+.zoom-in img
+{
+    transition: 0.6s ease;
+}
+.zoom-in:hover img
+{
+    transform: scale(1.1);
+    overflow: hidden;
+}
+
+.yugank
+{
+    overflow: hidden;
+}
+
+.yugank img
+{
+    /* transform: rotate(-30deg); */
+    transition: 0.6s ease;
+    overflow: hidden;
+
+}
+.raaj
+{
+background-image: url('images/ok1.jpg');
+height: 150px;
+
+}
+ 
+.okh
+{
+background-image: url('images/WhatsApp\ Image\ 2024-09-12\ at\ 23.08.39_a38132d6.jpg');
+height: 600px;
+
+}
+/* index page css end  modified */
+.line-r{
+    height: 2px;
+    width: 50px;
+    background-color: rgba(165, 42, 42, 0.795);
+}
+
+.card-img{
+    
+    opacity:0.5;
+}
+
+.list-style ul li{
+    list-style-type: none;
+
+}
+
+.list-style ul li a {
+    text-decoration:none;
+    color: #fff;
+    
+    
+}
+
+/* index page css  ends */
+
+.contact-outer {
+  border: 2px solid rgba(0, 60, 255, 0.555);
+   
+}
+.col-style{
+   
+    border-radius: 6px;
+    box-shadow: 5px 3px 3px rgb(172, 173, 173);
+}
+.btn-shadow{
+    box-shadow: 2px 2px 2px rgb(172, 173, 173);
+}
+/* login page css start*/
+.login-row {
+    background: linear-gradient(90deg, rgb(221, 237, 240) 0%, rgb(197, 197, 233) 42%, rgb(150, 222, 224) 59%, rgba(0,212,255,1) 100%);
+
+}
+/* login page css ends*/

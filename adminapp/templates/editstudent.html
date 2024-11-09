@@ -1,0 +1,101 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center"> edit Student</h1>
+        <form method="post">
+            {% csrf_token %}
+            
+            <table class="table table-bordered">
+                <tr>
+                    <td>Enter Roll No</td>
+                    <td>
+                        <input type="text" name="rollno" class="form-control"   value="{{st.rollno}}"       placeholder="Enter Roll No.">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Name</td>
+                    <td>
+                        <input type="text" name="name" class="form-control"   value="{{ st.name}}"       placeholder="Enter Name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Father's Name</td>
+                    <td>
+                        <input type="text" name="fname" class="form-control"    value="{{ st.fname}}"      placeholder="Enter father's Name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mother's Name</td>
+                    <td>
+                        <input type="text" name="mname" class="form-control"    value="{{st.mname}}"      placeholder="Enter Mother's Name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                            <input type="text" name="gender" value="{{st.gender}}" class="form-control"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date Of Birth</td>
+                    <td>
+                        <input type="date" name="dob" class="form-control" value="{{st.dob}}" placeholder="Enter DOB">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contact No.</td>
+                    <td>
+                        <input type="number" name="contactno" class="form-control" value="{{st.contactno}}" placeholder="Enter Contact No.">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td>
+                        <input type="email" name="emailaddress" class="form-control"    value="{{st.emailaddress}}"      placeholder="Enter Email Id" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select Class</td>
+                    <td>
+                        <select name="sclass" class="form-control">
+                            <option value="">Select Class </option>
+                            {% for c in cl %}
+                            <option value="{{c.class_name}}">{{c.class_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <textarea name="address"   value="{{st.address}}"       class="form-control" ></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Paid Fees</td>
+                    <td>
+                        <input type="number" name="feepaid"    value="{{st.feepaid}}"      class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Due fees</td>
+                    <td>
+                        <input type="text" name="duefees"    value="{{st.duefees}}"      class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </td>
+                </tr>
+            </table>
+
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

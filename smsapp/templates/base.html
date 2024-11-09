@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Management System</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{%  static 'css/style.css'  %}">
+
+  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</head>
+
+<body style="overflow:auto">
+  <div class="container-fluid">
+
+
+    <div class="col-sm-12">
+      <!-- logo div starts -->
+    
+      <div class="row mt-3">
+
+        <div class="col-sm-4  text-end">
+          <div>
+  
+            <img src="{% static 'images/sadhu-campus-1.jpeg'%}" height="100px" width="300px">
+  
+  
+          </div>
+        </div>
+        <!-- logo div ends -->
+  
+        <div class="col-sm-8">
+          <!-- contact details and login row1 starts -->
+          <div class="row mt-3 text-center">
+            <p><span class="text-primary fw-semibold "> <i class="fa-solid fa-phone" style="color: #1d7bc3;"></i>
+                9044554046,9044554045 |</span> <span class="text-primary fw-semibold"><i class="fa-solid fa-envelope"
+                  style="color: #2d60b9;"></i> admission.sadhucampus@jaipuria.School</span><span>
+                <button class=" btn btn-primary log-btn">
+                  <a href="{% url 'login' %}">
+                    <h6 style="color:#fff">ERP Login</h6>
+                  </a>
+                </button>
+  
+  
+          </div>
+          <!-- contact deatials and login row1 ends -->
+          <!-- navbar starts -->
+          <div class="row mt-3 text-center">
+            <nav class="navbar navbar-expand-lg bg-body-light">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+                    <!-- navbar home start -->
+                    <li class="nav-item ">
+                      <a class="nav-link " href="{% url 'index' %}" role="button" aria-expanded="false">
+                        <button type="button" class="btn btn-light fw-semibold nav-button">Home</button>
+                      </a>
+                    </li>
+  
+  
+  
+                    <!-- navbar home end -->
+  
+                    <!-- drop down about us starts -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link " href="{% url 'about' %}" role="button" data-bs-toggle="dropdown">
+                        <button class="btn btn-light fw-semibold nav-button" type="submit">About
+                        </button>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'about' %}">Vision And Mission</a></li>
+                        <li><a class="dropdown-item" href="{% url 'aboutus' %}">About School</a></li>
+                        <li><a class="dropdown-item" href="{% url 'aboutfounder' %}">Founder's Message</a></li>
+                        <li><a class="dropdown-item" href="{% url 'aboutchairman' %}">Chairman's Message</a></li>
+                        <li><a class="dropdown-item" href="{% url 'aboutprinciple' %}">Principle's Message</a></li>
+                        <li><a class="dropdown-item" href="{% url 'aboutmanagement' %}">Schools Management Team</a></li>
+                        <li><a class="dropdown-item" href="#">Group & Institutions</a></li>
+  
+                      </ul>
+                    </li>
+                    <!-- dropdown ends -->
+                    <!-- ACADEMICS STARTS -->
+                    <li class="nav-item ">
+                      <a class="nav-link " href="{% url 'academic' %}" role="button" aria-expanded="false">
+                        <button type="button" class="btn btn-light fw-semibold nav-button">Academic</button>
+                      </a>
+                    </li>
+                    <!-- ACADEMICS  ENDS -->
+                    <!-- FACILITIES DROPDOWN STARTS -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link " href=" {% url 'about' %}"" role=" button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <button class="btn btn-light fw-semibold nav-button" type="submit">
+                          FACILITIES</button>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'transport' %}"> Transport </a></li>
+                        <li><a class="dropdown-item" href="   {% url 'medical' %}"> Medical Room </a></li>
+                        <li><a class="dropdown-item" href=" {% url 'smartclass' %}  "> Smart Class </a></li>
+                        <li><a class="dropdown-item" href=" # "> Other Facilities </a></li>
+  
+  
+  
+  
+  
+                      </ul>
+                    </li>
+                    <!-- FACILITIES DROPDOWN ENDS -->
+                    <!-- admission dropdown start -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light fw-semibold nav-button" type="submit">
+                          ADMISSION</button>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href=" #">Admission Procedure </a></li>
+                        <li><a class="dropdown-item" href=" #">Download Prospectus </a></li>
+                        <li><a class="dropdown-item" href=" #">Rules & Regulations </a></li>
+                        <li><a class="dropdown-item" href=" #"> Fee Structure </a></li>
+                      </ul>
+                    </li>
+  
+                    <!-- admission dropdown ends-->
+                    <!-- media dropDOWN starts -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light fw-semibold nav-button" type="submit">
+                          MEDIA
+                        </button>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'news' %}">News Events </a></li>
+                        <li><a class="dropdown-item" href="#">Video Gallery</a></li>
+  
+                      </ul>
+                    </li>
+                    <!-- media dropDWON ends -->
+                    <!-- CARRER STARTS -->
+                    <li class="nav-item ">
+                      <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light fw-semibold nav-button" type="submit">CARRER</button>
+                      </a>
+                    </li>
+                    <!-- CARRER ENDS -->
+                    <!-- CONTACT US START   -->
+                    <li class="nav-item ">
+                      <a class="nav-link " href="{% url 'contact' %}" role="button" aria-expanded="false">
+                        <button class="btn btn-light fw-semibold  nav-button" type="submit">CONTACT</button>
+                      </a>
+                    </li>
+                    <!-- CONTACT US  ENDS   -->
+                  </ul>
+  
+  
+  
+                </div>
+              </div>
+            </nav>
+        </div>
+          <!-- navbar ends -->
+    </div>
+    <!-- Main Start -->
+        <div class="row" style="min-height: 500px;">
+          {% block body %}
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>Welcome to Seth Ananadram Jaipuria School, Barabanki</h2>
+            </div>
+          </div>
+          {% endblock %}
+        </div>
+        <!-- Main End -->
+        <!-- footer start -->
+        <div class="contanier p-0">
+          <div class="row-foot p-0">
+            <div class="col-md-10 mx-auto">
+              <div class="row mt-5 py-5">
+
+                <div class="col-md-4 justfy ">
+                  <h5>ABOUT US</h5>
+                  <div class="row py-3">
+                    <p> <small>seth Anandram Jaipuria School, Sadhu Campus – Barabanki, follows the motto
+                        ‘Empower,
+                        Enthuse and Excel’ by sparking the students’ curiosity and enthusing and
+                        empowering
+                        them
+                        with knowledge to excel in all aspects of school education. We create life-long
+                        learners.</small>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 ">
+
+                  <H5>QUICK LINKS</H5>
+                  <div class="row py-3">
+
+                    <h6><i class="fa-solid fa-angle-right"></i>&nbsp;&nbsp;<small>Feedback
+                        Form</small> </h6>
+                    <hr class="text-light">
+                    <h6><i class="fa-solid fa-angle-right"></i> &nbsp;&nbsp;<small> Career</small>
+                    </h6>
+                    <hr class="text-light">
+                    <h6><i class="fa-solid fa-angle-right"></i> &nbsp;&nbsp;<small> Fee Structure
+                      </small> </h6>
+                    <hr class="text-light">
+                    <h6><i class="fa-solid fa-angle-right"></i> &nbsp;&nbsp;<small>Parent
+                        Portal</small> </h6>
+                    <hr class="text-light">
+                  </div>
+                </div>
+                <div class="col-md-4 px-3 ">
+                  <H5>CONTACT US</H5>
+                  <div class="row py-3">
+                    <h6 class="fw-bold justfy"> <i class="fa-regular fa-circle-dot"></i>&nbsp;Seth Anandram
+                      Jaipuria School,Sadhu Campus,
+                      Barabanki: <small>Village -Jhansapurwa,Post-Madanpur,Tehsil-Fatehpur,
+                        Barabanki Pincode-225305</small>
+                    </h6>
+                    <h6><i class="fa-brands fa-whatsapp"></i>&nbsp;&nbsp;<small>Phone: 9044554046,
+                        9044554045
+
+                      </small></h6>
+                    <h6><i class="fa-regular fa-clock"></i>&nbsp;&nbsp;<small>Working Days/Hours: Summer-
+                        08:00 am – 02:00 pm
+                        Winters- 09:00 am – 03:00 pm</small></h6>
+
+
+                    &nbsp;
+
+
+                    <h6><i class=" f-style fa-brands fa-facebook fa-fade fa-2x " style="color: #fcfcfc;"></i>
+                      &nbsp;&nbsp;&nbsp;
+                      <i class="y-style fa-brands fa-youtube  fa-2x"></i>&nbsp;&nbsp;&nbsp;<i
+                        class="i-style fa-brands fa-instagram fa-2x fw-bold px-2"></i>
+                    </h6>
+                  </div>
+
+                </div>
+
+
+              </div>
+
+
+
+
+            </div>
+          </div>
+          <div class="row-f2">
+            <div class="col-md-10 mx-auto mt-2 text-center" >
+              <h6><small> © Copyright 2024. All Rights Reserved. Made by Akash . [under the guidence of Mr
+                  asif and mr harshit] </small></h6>
+              <br>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <!-- footer end -->
+
+
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

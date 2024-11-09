@@ -1,0 +1,23 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+{% block student %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center"><u><i>Student Dashboard</i></u></h1>
+
+        <div class="card  px-2"
+        style="width: 18rem; border-radius: 60px; background-color: rgba(133, 60, 218, 0.24);">
+
+        <div class="card-body text-bg-subtle-primary">
+            <h1 class="text-center"><i class="fa-solid fa-book fa-2x"></i>&nbsp;&nbsp; {{slmcount}} </h1>
+            <a href="{% url 'teacherapp:viewslm' %}" style="text-decoration:none; color: black;">
+                <h2 class="text-center ">SLM</h2>
+            </a>
+
+        </div>  
+    </div>
+    </div>
+</div>
+
+{% endblock %}

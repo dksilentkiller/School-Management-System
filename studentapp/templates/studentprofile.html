@@ -1,0 +1,106 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block student  %}
+
+<div class="row ">
+    <div class="col-sm-12">
+        <h1 class="text-center text-bg-light">student profile </h1>
+        <form   action="{% url 'studentapp:uploadpic' %}"  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+      
+            <div class="row ">
+                <div class="col-sm-4 text-center text-bg-light mx-auto">
+                    {% if student.pic %}
+                    <img src="{{student.pic.url}}" alt="" class="img-fluid border" height="250px" width="250px">
+                    {%  endif  %}
+                    <input type="file" name="pic" >
+                    <input type="submit" value="upload" class="btn btn-warning" >
+
+                </div>
+            </div>
+            </form>
+
+            <form method="post" class="text-bg-light">
+
+                {% csrf_token %}
+            
+
+
+            <div class="row ">
+                <div class="col-md-6">
+                    <label for="n" class="form-label">name</label>
+                    <input type="text" name="name" value="{{student.name}}" readonly id="n" class="form-control rounded-0">
+                </div>
+                <div class="col-md-6">
+                    <label for="fn" class="form-label">Father's name</label>
+                    <input type="text" name="fname" value="{{student.fname}}" id="fn" readonly class="form-control rounded-0">
+                </div>
+               
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="mn" class="form-label">Mother's name</label>
+                    <input type="text" name="mname" value="{{student.mname}}" id="mn" class="form-control rounded-0" readonly>
+                </div>
+                <div class="col-md-6">
+                    <label for="g" class="form-label">gender</label>
+                    <input type="text" name="gender" value="{{student.gender}}" id="g" class="form-control rounded-0"readonly>
+                </div>
+               
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="dob" class="form-label">date of birth</label>
+                    <input type="date" name="dob" value="{{student.dob}}" id="dob" class="form-control rounded-0"readonly>
+                </div>
+                <div class="col-md-6">
+                    <label for="cn" class="form-label">Contact</label>
+                    <input type="text" name="contactno" value="{{student.contactno}}" id="cn" class="form-control rounded-0">
+                </div>               
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="em" class="form-label">emailaddress</label>
+                    <input type="email" name="emailaddress" value="{{student.emailaddress}}" id="em" class="form-control rounded-0" readonly>
+                </div>
+                <div class="col-md-6">
+                    <label for="cl" class="form-label">student class</label>
+                    <input type="text" name="sclass" value="{{student.sclass}}" id="cl" class="form-control rounded-0"readonly>
+                </div>               
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="q" class="form-label">feepaid</label>
+                    <input type="text" name="feepaid" value="{{student.feepaid}}" id="q" class="form-control rounded-0"readonly>
+                    
+                 </div> 
+                 
+               
+               
+                 <div class="col-md-6">
+                    <label for="s" class="form-label">duefees</label>
+                    <input type="text" name="duefees" value="{{student.duefees}}" id="s" class="form-control rounded-0"readonly>
+                </div>
+                
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-12">
+                   
+                        <label for="ad" class="form-label">address</label>
+                        <textarea name="address" class="form-control rounded-0">{{student.address}}</textarea>
+                     
+
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-warning">Submit</button>
+            </div>
+            
+        </form>
+
+    </div>
+</div>
+
+
+{%  endblock  %}

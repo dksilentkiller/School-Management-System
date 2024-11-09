@@ -1,0 +1,41 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center">Enquiries</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>S. No</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Contact No.</th>
+                <th>Email Address</th>
+                <th>Enquiry Text</th>
+                <th>Enquiry Date</th>
+                <th>Action</th>
+            </tr>
+            {% for e in enq %}
+            <tr>
+                <td>{{e.id}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.gender}}</td>
+                <td>{{e.address}}</td>
+                <td>{{e.contactno}}</td>
+                <td>{{e.emailaddress}}</td>
+                <td>{{e.enquirytext}}</td>
+                <td>{{e.enquirydate}}</td>
+                <td>
+                    <a href="{% url 'adminapp:delenq' id=e.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </thead>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

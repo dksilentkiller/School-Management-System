@@ -1,0 +1,34 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center">View Classes</h1>
+        <table class="table">
+            <tr>
+                <th>Class ID</th>
+                <th>Class Name</th>
+                <th>No of Seats</th>
+                <th>Room No</th>
+                <th>Added Date</th>
+                <th>Actions</th>
+            </tr>
+            {% for c in cl %}
+            <tr>
+                <td>{{c.cid}}</td>
+                <td>{{c.class_name}}</td>
+                <td>{{c.seats}}</td>
+                <td>{{c.roomno}}</td>
+                <td>{{c.created_date}}</td>
+                <td>
+                    <a href="{% url 'adminapp:delclass' cid=c.cid %}" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="{% url 'adminapp:editclass' id=c.cid %}" class="btn btn-sm btn-success">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

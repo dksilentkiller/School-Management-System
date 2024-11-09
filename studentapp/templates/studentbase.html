@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="stylesheet" href="{% static 'css/adminstyle.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <span style="color: rgb(12, 13, 14);font-size:24px;font-family: 'Franklin Gothic Medium';">{{student.name}}</span>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        <h3>student Elements</h3>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="{% url 'studentapp:studenthome' %}" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="{% url 'studentapp:stuattend' %}" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                         view Attendence
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="{%  url 'studentapp:stuslm' %}" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                         view Study Material
+                        </a>
+                    </li>
+                    
+                    
+                 
+                   
+                   
+                    <li class="sidebar-item">
+                        <a href="{% url 'studentapp:studentprofile' %}" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                           Update Profile
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="{% url 'studentapp:stchangepass' %}" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Change Password
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="{% url 'studentapp:studentlogout'%}" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Logout
+                        </a>
+                    </li>
+                
+                    
+                </ul>
+            </div>
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                           
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <span class="me-2" style="color: rgb(67, 82, 77);font-size:30px">{{student.name}}</span>
+                                &nbsp;&nbsp;&nbsp;
+                                <i class="fa-solid fa-user fa-3x" style="color: rgb(230, 110, 12);"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="{% url 'studentapp:studentprofile' %}" class="dropdown-item">Profile</a>
+                                <a href="#" class="dropdown-item">Setting</a>
+                                <a href="{% url 'studentapp:studentlogout'%}" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    {% block student %}
+
+                    {% endblock %}
+                </div>
+            </main>
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-12 text-end">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <strong>&copy; Softpro India 2024</strong>
+                                </a>
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/adminjs.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% extends 'teacherbase.html' %}
+{% load static %}
+{% block teacher %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center"><u><i> view Attendence</i></u></h1>
+
+       
+        <table class="table">
+            <tr>
+                <th>s.no</th>
+                <th>Rollno</th>
+                <th>class</th>
+                <th>Date</th>
+                <th>Attendance</th>
+                
+            </tr>
+            {% for a in att %}
+            <tr>
+                <td>{{forloop.counter}} </td>
+                <td>{{a.rollno}} </td>
+                <td>{{a.name}} </td>
+                <td>{{a.sclass}} </td>
+                <td>{{a.created_date}} </td>
+                <td>{{a.status}} </td>
+            </tr>
+            {%  endfor  %}
+
+
+        </table>
+    </div>
+</div>
+
+{% endblock %}

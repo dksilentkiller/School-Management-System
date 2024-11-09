@@ -1,0 +1,136 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="row ">
+    <div class="col-sm-12 text-bg-subtle-primary">
+        <h1 class="text-center "> ADMIN DASHBOARD</h1>
+
+        <div class="col-md-10 py-4 mx-auto">
+
+            <div class="row  py-3">
+                <div class="card  px-2"
+                    style="width: 18rem; border-radius: 60px; background-color: rgba(133, 60, 218, 0.24);">
+
+                    <div class="card-body text-bg-subtle-primary">
+                        <h1 class="text-center"><i class="fa-solid fa-user-graduate fa-2x"></i> {{stu_count}} </h1>
+                        <a href="{% url 'adminapp:viewstudent' %}" style="text-decoration:none; color: black;">
+                            <h2 class="text-center ">STUDENTS</h2>
+                        </a>
+
+                    </div>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="card px-2" style="width: 18rem;border-radius: 60px; background-color: rgba(133, 60, 218, 0.24);">
+
+                    <div class="card-body">
+                        <h1 class="text-center"><i class="fa-solid fa-chalkboard-user fa-2x"></i> {{t_count}} </h1>
+                        <a href="{% url 'adminapp:viewteacher' %}" style="text-decoration:none; color: black;">
+                            <h2 class="text-center ">TEACHER</h2>
+                        </a>
+
+                    </div>
+                </div>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="card px-2" style="width: 18rem;border-radius: 60px; background-color: rgba(133, 60, 218, 0.24);">
+
+                    <div class="card-body">
+                        <h1 class="text-center"><i class="fa-solid fa-building-columns fa-2x"></i>&nbsp;&nbsp;{{clcount}}</h1>
+                        <a href="{% url 'adminapp:viewclass' %}" style="text-decoration:none; color: black;">
+                            <h2 class="text-center ">CLASS&nbsp;&nbsp;</h2>
+                        </a>
+
+                    </div>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </div>
+            <div class="row py-2">
+                
+
+
+                <div class="card px-2" style="width: 18rem;border-radius: 60px; background-color: rgba(201, 172, 80, 0.24);">
+
+                    <div class="card-body ">
+                        <h1 class="text-center"><i class="fa-solid fa-book-open-reader fa-2x"></i> &nbsp;&nbsp;{{subcount}}</h1>
+                        <a href="{% url 'adminapp:viewsubject' %}" style="text-decoration:none; color: black;">
+                            <h2 class="text-center ">SUBJECT</h2>
+                        </a>
+                    </div>
+
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="card px-2" style="width: 18rem;border-radius: 60px; background-color: rgba(201, 172, 80, 0.24);">
+
+                    <div class="card-body px-2">
+                        <h1 class="text-center"> <i class="fa-solid fa-users-viewfinder fa-2x"></i> &nbsp;&nbsp;{{ps}}</h1>
+                        <a href="{% url 'teacherapp:viewattend' %}" style="text-decoration:none; color: black;">
+                            <h2 class="text-center "> student present</h2>
+                        </a>
+
+                    </div>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="card  px-2"
+                    style="width: 18rem;border-radius: 60px; background-color: rgba(201, 172, 80, 0.24);">
+
+                    <div class="card-body">
+                        <h1 class="text-center"> <i class="fa-regular fa-bell fa-2x"></i> &nbsp;&nbsp;{{noticount}}</h1>
+                        <a href="{% url 'adminapp:viewnoti' %}" style="text-decoration:none; color: black;">
+                            <h2 class="text-center ">NOTIFICATION</h2>
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class="row py-2">
+
+                <div class="card "
+                    style="width: 18rem;border-radius: 60px; background-color: rgba(201, 172, 80, 0.24);">
+
+                    <div class="card-body">
+                        <h1 class="text-center"><i class="fa-solid fa-envelope-open-text fa-2x"></i>&nbsp;&nbsp;{{enqcount}}</h1>
+                        <a href="{% url 'adminapp:viewenquiry' %}" style="text-decoration:none; color: black;">
+                            <h2 class="text-center ">ENQUIRY</h2>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card px-2" style="width: 18rem;border-radius: 60px; background-color: rgba(201, 172, 80, 0.24);">
+
+                <div class="card-body px-2">
+                    <h1 class="text-center"> <i class="fa-solid fa-users-viewfinder fa-2x"></i> &nbsp;&nbsp;{{abs}}</h1>
+                    <a href="{% url 'teacherapp:viewattend' %}" style="text-decoration:none; color: black;">
+                        <h2 class="text-center "> student  absent</h2>
+                    </a>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+{% endblock %}

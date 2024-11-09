@@ -1,0 +1,46 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center">Edit Class</h1>
+        <form method="post">
+            {% csrf_token %}
+            <table class="table">
+                <tr>
+                    <td>Class Id</td>
+                    <td>
+                        <input type="text" name="cid" id="" value="{{cl.cid}}" class="form-control" readonly>
+                    </td>
+                </tr>
+                <tr></tr>
+                    <td>Enter Class Name</td>
+                    <td>
+                        <input type="text" name="class_name"  value=" {{cl.class_name}}"  class="form-control">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>No. Of Seats</td>
+                    <td>
+                        <input type="number" name="seats" id="" value="{{cl.seats}}" class="form-control">
+                    </td>
+                </tr>
+                <tr></tr>
+                    <td>Room No.</td>
+                    <td>
+                        <input type="text" name="roomno" id="" value="{{cl.roomno}}" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
